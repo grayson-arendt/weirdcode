@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from matplotlib import rcParams
 
-title: str = "Triangle Generator"
+title = "Triangle Generator"
 
 rcParams['axes.linewidth'] = 1.3
 rcParams['toolbar'] = 'None'
