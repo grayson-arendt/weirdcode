@@ -8,7 +8,6 @@ title: str = "Triangle Generator"
 rcParams['axes.linewidth'] = 1.3
 rcParams['toolbar'] = 'None'
 bgCOLOR = '#141c1e'
-font = {'fontname':'Verdana','color':'#dddddd','weight':'normal','size':'11'}
 titlefont = {'fontname':'Franklin Gothic Medium','color':'#dddddd','weight':'bold','size':'15'}
 
 fig, ax = plt.subplots(1,1,figsize=(6,5),dpi=100)
