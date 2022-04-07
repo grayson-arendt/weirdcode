@@ -53,7 +53,7 @@ def animate(i):
     p2 = [x2, y2]
     p3 = [x3, y3]
 
-    xcoords = [x1,x2,x3,x1]
+    xcoords = [x1, x2, x3, x1]
     ycoords = [y1, y2, y3, y1]
 
     plt.scatter(x1, y1, s=7, c='#FFBF00',marker='.')
