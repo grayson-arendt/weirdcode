@@ -13,7 +13,6 @@ data_train = pd.read_csv('C:/Users/Grayson/Dropbox/PC/Downloads/train.csv/train.
 data_test = pd.read_csv('C:/Users/Grayson/Dropbox/PC/Downloads/test.csv/test.csv')
 
 x_train = data_train.drop(labels=["label"], axis=1)
-x_trainNormal = data_train.drop(labels=["label"], axis=1)
 y_train = data_train["label"]
 
 x_train = x_train/255.0
@@ -21,14 +20,14 @@ x_train = np.array(x_train).reshape(-1,28,28)
 x_test = data_test/255.0
 x_test = np.array(x_test).reshape(-1,28,28)
 
-train_images = np.expand_dims(x_train, axis=-1)
-test_images = np.expand_dims(x_test, axis=-1)
+trainImages = np.expand_dims(x_train, axis=-1)
+testImages = np.expand_dims(x_test, axis=-1)
 
 labels = np.array(data_train.label)
 
-train_datagen = ImageDataGenerator(rotation_range=20,
+dataGen = ImageDataGenerator(rotation_range=20,
                                   zoom_range=0.1)
-train_generator = train_datagen.flow(x=train_images,
+trainGenerator = dataGen.flow(x=train_images,
                                     y=labels,
                                     batch_size=32)
 
@@ -49,9 +48,8 @@ model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
-history = model.fit(train_generator, epochs=5)
-
-results = model.predict(test_images)
+history = model.fit(trainGenereator, epochs=5)
+results = model.predict(testImages)
 
 y_pred = [np.argmax(pred) for pred in results]
 len(y_pred)
