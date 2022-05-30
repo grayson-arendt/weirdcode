@@ -27,7 +27,7 @@ labels = np.array(data_train.label)
 
 dataGen = ImageDataGenerator(rotation_range=20,
                                   zoom_range=0.1)
-trainGenerator = dataGen.flow(x=train_images,
+trainGenerator = dataGen.flow(x=trainImages,
                                     y=labels,
                                     batch_size=32)
 
@@ -48,7 +48,7 @@ model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
-history = model.fit(trainGenereator, epochs=5)
+history = model.fit(trainGenerator, epochs=5)
 results = model.predict(testImages)
 
 y_pred = [np.argmax(pred) for pred in results]
