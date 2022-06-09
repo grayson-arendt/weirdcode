@@ -5,7 +5,7 @@ import datetime as dt
 from bokeh.io import curdoc
 from bokeh.plotting import figure, output_file, show
 
-data = pd.read_csv('C:/Users/Grayson/Dropbox/PC/Downloads/tgt_price-history-06-09-2022 (1).csv')
+data = pd.read_csv('C:/Users/Grayson/Dropbox/PC/Downloads/target_Stocks.csv')
 data.drop(data.index[data['Time'] == 0],inplace=True)
 
 output_file("tgt.html")
