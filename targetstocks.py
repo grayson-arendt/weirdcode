@@ -12,7 +12,7 @@ data.drop(data.index[data['Time'] == 0], inplace = True)
 output_file("tgt.html")
 curdoc().theme = 'dark_minimal'
 
-graph = figure(x_axis_type= "datetime",title = "Target Stocks (2020-2022)")
+graph = figure(x_axis_type= "datetime",title = "Target Stocks (2020-2022)",height=350,width=600)
 
 graph.xaxis.axis_label = "Date"
 graph.yaxis.axis_label = "Price (in USD)"
@@ -23,6 +23,7 @@ formatter = mdates.DateFormatter("%Y-%m-%d")
 
 prices = data['Last']
 
-graph.line(dates,prices,color = "red")
+graph.line(dates,prices,color = "red",line_cap="round",line_join="round",line_width=1)
+graph.line(dates,prices,color = "red",line_cap="round",line_join="round",line_width=4,line_alpha=0.35) # Glow effect for fun
 
 show(graph)
