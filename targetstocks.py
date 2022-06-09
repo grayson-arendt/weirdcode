@@ -2,7 +2,6 @@ import numpy as np
 import bokeh
 import pandas as pd
 import datetime as dt
-import matplotlib.dates as mdates
 from bokeh.io import curdoc
 from bokeh.plotting import figure, output_file, show
 
@@ -19,7 +18,6 @@ graph.yaxis.axis_label = "Price (in USD)"
 
 dates = data['Time']
 dates = pd.to_datetime(dates)
-formatter = mdates.DateFormatter("%Y-%m-%d")
 
 prices = data['Last']
 
