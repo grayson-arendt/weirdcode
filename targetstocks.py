@@ -1,5 +1,5 @@
-import numpy as np
 import bokeh
+import numpy as np
 import pandas as pd
 import datetime as dt
 from bokeh.io import curdoc
